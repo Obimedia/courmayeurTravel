@@ -1,0 +1,59 @@
+{% set griglia = griglia is defined ? griglia : 'candy' %}
+{% set layout = layout is defined ? layout : 'mobile' %}
+{% set dimensione = dimensione is defined ? dimensione : 'large' %}
+{% set siteStyle = siteStyle is defined ? siteStyle : griglia ~ ' '~ layout ~' '~ dimensione %}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+
+    <meta name="" content="" />
+    <meta content="IE=edge,chrome=1; text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    {% block meta %}{% endblock %}
+
+    <title>{% block title %}Home{% endblock %} | Symfony Base</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/assets/images/favicon.png') }}" />
+
+    {% include '@App/templates/general/styles.html.twig' %}
+    {% block stylesheets %}{% endblock %}
+
+    {% include '@App/templates/general/ie-scripts.html.twig' %}
+    {% include '@App/templates/general/jquery.html.twig' %}
+
+</head>
+<body class="html {% block bodyClass %}not-front{% endblock %} context-{{ app.request.attributes.get('_route') }} {% if not app.user %}not-{% endif %}logged-in">
+
+<div id="page" class="page clearfix">
+
+    {% block tplHeader %}
+        {% embed '@App/templates/header/header.html.twig' %}
+            {% block userFisrt %}{% endblock %}
+            {% block branding %} {% endblock %}
+            {% block headerFirst %}{% endblock %}
+            {% block headerSecond %}{% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block tplContent %}
+           {% embed '@App/templates/content/content.html.twig' %}{% endembed %}
+    {% endblock %}
+    {% block tplFooter %}
+        {% embed '@App/templates/footer/footer.html.twig' %}
+            {% block footerSecond %}{% endblock %}
+        {% endembed %}
+    {% endblock %}
+</div>
+
+
+{% include '@App/templates/general/scripts.html.twig' %}
+
+{% block scripts %}
+
+    {% block javascripts %}
+        <script rel="javascript" type="text/javascript" src="{{ asset('bundles/app/assets/js/custom.js') }}"></script>
+    {% endblock %}
+{% endblock %}
+
+</body>
+</html>

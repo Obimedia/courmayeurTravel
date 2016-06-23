@@ -1,0 +1,50 @@
+{% extends '@App/Base/base.html.twig' %}
+
+{% block bodyClass %}front{% endblock %}
+
+{% block tplHeader %}
+    {% embed '@App/templates/header/header.html.twig' %}
+
+        {% block branding %}
+            {% include '@App/templates/header/branding.html.twig' %}
+        {% endblock %}
+
+        {% block headerFirst %}
+            {% include '@App/templates/header/menu.html.twig' %}
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}
+
+ {% block tplContent %}
+     {% embed '@App/templates/content/content.html.twig' %}
+         {% block content %}
+             {% block blocco_1 %}{% include '@App/templates/content/blocco-stili.html.twig' with {
+             'title'   : 'esempi boostrap',
+             'items' : 1,
+             'grid' : 'grid-16',
+             'gridXs' : 6,
+             'gridSm' : 6,
+             'gridMd' :16,
+             'class' : '',
+             'minItems' : 1,
+             'maxItems' : 1,
+             'border': false}
+             %}{% endblock %}
+         {% endblock %}
+     {% endembed %}
+ {% endblock %}
+
+{% block tplFooter %}
+    {% embed '@App/templates/footer/footer.html.twig' %}
+
+        {% block footerFisrt %}
+            {% include '@App/templates/footer/footer-first.html.twig' %}
+        {% endblock %}
+
+        {% block footerSecond %}
+            {% include '@App/templates/footer/footer-second.html.twig' %}
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}

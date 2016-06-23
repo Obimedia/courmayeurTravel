@@ -1,0 +1,24 @@
+<li><p>Nome</p></li>
+<li><p>{{ app.user.userData.nome }}</p></li>
+<li><p>Cognome</p></li>
+<li><p>{{ app.user.userData.cognome }}</p></li>
+<li><p>La tua opzione 2x1 è collegata al numero</p></li>
+<li><p>{{ app.user.username }}</p></li>
+<li><p>Email</p></li>
+<li><p>{{ app.user.userData.mail }}</p></li>
+
+{% if app.user.dataChangeCounter > 0 %}
+    <p class="description">
+        {% if app.user.dataChangeCounter == 1 %}
+            Ricorda che potrai modificare la tua e-mail solo una volta.
+        {% endif %}
+    </p>
+{% endif %}
+
+<div class="form-actions show-xs-block">
+    {% if app.user.dataChangeCounter > 0 %}
+        <a class="edit" href="#confermaDatiModal" data-toggle="modal"><i class="fa fa-pencil"></i></a>
+    {% endif %}
+
+    <a class="go" href="{{ path('user_logout') }}"><i class="fa fa-arrow-right"></i></a>
+</div>

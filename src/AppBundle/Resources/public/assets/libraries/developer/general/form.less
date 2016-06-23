@@ -1,0 +1,82 @@
+// ******************************
+// Style General Button Value
+// ******************************
+input.form-submit{
+    .btn;
+
+}
+
+// ******************************
+// Style General form
+// ******************************
+form{
+
+    @media @max-sm {
+
+    }
+    @media @min-sm {
+
+    }
+    @media @min-md {
+
+    }
+    @media @min-lg {
+
+    }
+
+    .form-item{
+        .form-group;
+
+        label{
+            font-weight: normal;
+            // .label-required();
+
+            .form-required{
+                color: @alert;
+            }
+        }
+        .description{
+            font-size: @fontSize;
+        }
+        .form-text{
+            .form-control;
+
+            &.error{
+                border-color: @state-danger-border;
+                color: @state-danger-text;
+                background-color: @state-danger-bg;
+
+            }
+        }
+        .form-select{
+            .form-control;
+
+            &.error{
+                border-color: @state-danger-border;
+                color: @state-danger-text;
+                background-color: @state-danger-bg;
+            }
+        }
+        .form-textarea{
+            .form-control;
+            min-height: 200px;
+            height: auto;
+
+            &.error{
+                border-color: @state-danger-border;
+                color: @state-danger-text;
+                background-color: @state-danger-bg;
+            }
+        }
+    }
+
+    .grippie{
+        display: none;
+    }
+    .form-actions{
+
+        .form-submit{
+
+        }
+    }
+}

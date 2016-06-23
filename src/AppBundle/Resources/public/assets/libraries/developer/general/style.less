@@ -1,0 +1,111 @@
+// GLOBAL STYLE GENERAL ---------------------------------------------
+::-moz-selection { background: #DDDDDD; color: #FFFFFF; text-shadow: none; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);}
+::selection { background: #DDDDDD; color: #FFFFFF; text-shadow: none; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);}
+
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+#to-top {
+    background-image: url('@{imgPath}arrow-up-large.png');
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size:30px 30px;
+    .hide-text();
+    display: none;
+    .size(45px, 46px);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+
+    &:hover{
+    }
+}
+body{
+	font-family: @lato;
+}
+h1{
+	position:relative;
+	text-align:left;
+	color: @grigio-scuro;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 26px;
+	padding-bottom:10px;
+	border-bottom: 1px solid @colore-base;
+	
+	
+	@media @max-md {
+		font-size: 16px;
+	}
+	@media @max-sm {
+		width:96%;
+		margin:20px 2% 10px 2%;
+	}
+}
+.prodotti-correlati{
+	padding-left: 3px !important;
+	padding-right: 3px !important;
+
+	@media @max-sm {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	h1{
+		border-bottom: 0px;
+	}
+}
+.flexslider, .wrap-visual{
+	border:0px !important;
+	width: 96% !important;
+	margin:0px 2% !important;
+
+
+}
+.wrap-visual{
+	&.top{
+		width: 100% !important;
+		margin:0px !important;
+		
+		.flexslider{
+			width: 100% !important;
+			margin:0px !important;
+		}
+	}
+}
+.big{
+	font-size: 2em;
+}
+.push-right{
+	float:right;
+}
+#admin-menu{
+	display:none;
+}
+.blocco-step{
+	.stato-ordine{
+		@media @max-md {
+			line-height:12px;
+			font-size:12px;
+			float:left;
+			width:100%;
+			min-height:25px;
+		} 
+	}
+}
+.fa{
+	color:@blu;
+}
+
+select{
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	height: 40px;
+	border: 1px solid #d6d8db;
+	background-color: #ecedee;
+	text-transform: uppercase;
+	color: #47515c;
+}

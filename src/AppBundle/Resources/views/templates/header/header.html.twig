@@ -1,0 +1,109 @@
+{% set _userFisrt    = block('userFisrt') %}
+{% set _userSecond   = block('userSecond') %}
+{% set _branding     = block('branding') %}
+{% set _menu         = block('menu') %}
+{% set _headerFisrt  = block('headerFirst') %}
+{% set _headerSecond = block('headerSecond') %}
+
+{% set _all = _userFisrt|raw ~ _userSecond|raw ~ _branding|raw ~ _menu|raw ~ _headerFisrt|raw ~ _headerSecond|raw %}
+
+{% if _all is not empty %}
+    {% set classUserFirst    = classUserFirst    is defined ? classUserFirst    : 'grid-8' %}
+    {% set classUserSecond   = classUserSecond   is defined ? classUserSecond   : 'grid-4' %}
+    {% set classBranding     = classBranding     is defined ? classBranding     : 'grid-16' %}
+    {% set classMenu         = classMenu         is defined ? classMenu         : 'grid-16' %}
+    {% set classHeaderFirst  = classHeaderFirst  is defined ? classHeaderFirst  : 'grid-16' %}
+    {% set classHeaderSecond = classHeaderSecond is defined ? classHeaderSecond : 'grid-16' %}
+
+    <header id="section-header" class="section section-header">
+
+        {% if _userFisrt or _userSecond is not empty %}
+            <div id="zone-user-wrapper" class="zone-wrapper zone-user-wrapper clearfix">
+                <div id="zone-user" class="zone zone-user clearfix {{ siteStyle }}">
+
+                    {% if _userFisrt is not empty %}
+                        <div id="region-user-first" class="{{ classUserFirst }} region region-user-first">
+                            <div class="region-inner region-user-first-inner">
+
+                                {{ _userFisrt|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _userSecond is not empty %}
+                        <div id="region-user-second" class="{{ classUserSecond }} region region-user-second">
+                            <div class="region-inner region-user-second-inner">
+
+                                {{ _userSecond|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if _branding is not empty %}
+            <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix">
+                <div id="zone-branding" class="zone zone-branding clearfix  {{ siteStyle }}">
+
+                    <div id="region-branding" class="{{ classBranding }} region region-branding">
+                        <div class="region-inner region-branding-inner">
+
+                            {{ _branding|raw }}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if _menu is not empty %}
+            <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix">
+                <div id="zone-menu" class="zone zone-menu clearfix  {{ siteStyle }}">
+
+                    <div id="region-menu" class="{{ classMenu }} region region-menu">
+                        <div class="region-inner region-menu-inner">
+
+                            {{ _menu|raw }}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if _headerFisrt or _headerSecond is not empty %}
+            <div id="zone-header-wrapper" class="zone-wrapper zone-header-wrapper clearfix">
+                <div id="zone-header" class="zone zone-header clearfix  {{ siteStyle }}">
+
+                    {% if _headerFisrt is not empty %}
+                        <div id="region-header-first" class="{{ classHeaderFirst }} region region-header-first">
+                            <div class="region-inner region-header-first-inner">
+
+                                {{ _headerFisrt|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _headerSecond is not empty %}
+                        <div id="region-header-second" class="{{ classHeaderSecond }} region region-header-second">
+                            <div class="region-inner region-header-second-inner">
+
+                                {{ _headerSecond|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+
+    </header>
+{% endif %}

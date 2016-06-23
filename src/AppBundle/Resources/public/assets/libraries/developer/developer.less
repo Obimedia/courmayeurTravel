@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+// *** IMPORT SETTINGS DEFAULT --------------------------------------
+@import "settings/settings.less";
+
+// *** IMPORT FILE TO EACH REGION OF OMEGA 3.1 ----------------------
+@import 'regions/regions.less';
+
+// *** IMPORT SETTINGS GENERAL --------------------------------------
+@import 'general/form.less';
+@import 'general/messages.less';
+@import 'general/table.less';
+@import 'general/style.less';
+@import 'general/teaser.less';
+@import 'general/modal.less';
+
+// *** DEFAULT SYSTEM PAGE ------------------------------------------
+@import "system/pages/403-404.less";
+@import "system/pages/maintenance-page.less";
+@import "system/pages/user-profile.less";
+
+// *** SPECIFIC PAGE WITH INCLUDE FORM ------------------------------
+@import "system/form/user-login.less";
+@import "system/form/user-register.less";
+@import "system/form/password-request.less";
+@import "system/form/password-reset.less";
+@import "system/form/user-edit.less";
+@import "system/form/user-contact.less";
+
+// *** SPECIFIC MENU DEFAULT DRUPAL ---------------------------------
+@import "system/menu/main-menu.less";
+@import "system/menu/navigation.less";
+@import "system/menu/user-menu.less";
+@import "system/menu/block-menu.less";
+
+// *** SPECIFIC PAGE ------------------------------------------------
+
+// *** SPECIFIC BLOCK -----------------------------------------------
+@import "custom/blocks/login-block.less";
+@import "custom/blocks/tree-menu.less";
+@import "custom/blocks/custom-menu.less";
+@import "custom/blocks/block-search.less";
+@import "custom/blocks/search-bar.less";
+
+// *** DEFAULT SYSTEM MODULES ---------------------------------------
+@import "system/modules/views.less";
+
+// *** ECOMMERCE ----------------------------------------------------
+ @import "ecommerce/settings-ecommerce.less";
+
+// ------------------------------------------------------------------
+// GENERAL OPTIONAL SETTINGS AND STYLE FOR A TYPE OR LIBRARY
+// ------------------------------------------------------------------
+
+// *** IMPORT SETTING FOR FOOTER FIXED ------------------------------
+@import "optional/sticky-footer/sticky-footer.less";
+
+// *** REMIXIN https://github.com/christopher-ramirez/remixings -----
+// @import "optional/remixins/remixins.less";
+
+// *** OVERWRITE STYLE GENERAL FLEXSLIDER ---------------------------
+// @import "optional/flexslider/flexslider.less";

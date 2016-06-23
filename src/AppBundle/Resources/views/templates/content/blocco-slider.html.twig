@@ -1,0 +1,44 @@
+<div class="{{ grid }}">
+    <h1>{{ title }}</h1>
+    <div class="flexslider slider{{ title }}">
+        <ul class="slides">
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_caramel.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_cheesecake_brownie.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_donut.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_lemon.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_caramel.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_cheesecake_brownie.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_donut.jpg') }}" />
+            </li>
+            <li>
+                <img src="{{ asset('bundles/app/assets/images/kitchen_adventurer_lemon.jpg') }}" />
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+jQuery(document).ready(function ($) {
+    $('.slider{{ title }}').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 200,
+        itemMargin: 5,
+        minItems: {{ minItems }},
+        maxItems: {{ maxItems }}
+    });
+});
+</script>

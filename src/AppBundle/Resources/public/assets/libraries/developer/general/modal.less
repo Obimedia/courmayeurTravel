@@ -1,0 +1,110 @@
+// ******************************
+// Style General modal
+// ******************************
+.modal{
+  padding-top: 50px;
+  background-color: @modal-sfondo !important;
+
+  .modal-dialog{
+    width: 90%;
+    height: 250px;
+    margin: 0px auto;
+    color: @blu;
+    .modal-header{
+      border-bottom: none;
+      text-align: center;
+      color: @blu;
+
+      button{
+        position: absolute;
+        right: 10px;
+        opacity: 1;
+        top: -25px;
+        color: @bianco;
+        text-shadow: none;
+
+      }
+      h4{
+
+      }
+    }
+    .modal-body{
+      div{
+        width: 100%;
+        text-align: center;
+        label{
+          display: none;
+        }
+        textarea{
+          position: relative;
+          width: 80%;
+          margin: 0px auto;
+        }
+      }
+      .blocco{
+        position: relative;
+        height: 50px;
+      }
+      .ico-sx{
+        position: relative;
+        float: left;
+        text-align: center;
+        width: 30%;
+
+        p{
+          position: relative;
+          margin: 0px auto;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          border: 1px solid @blu;
+          .border-radius(12px);
+          font-size: 20px;
+          line-height: 20px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+      .valuta{
+        position: relative;
+        float: left;
+        text-align: center;
+        font-weight: bold;
+        width: 40%;
+        font-size: 20px;
+        padding: 0px 20px;
+      }
+      .ico-dx{
+        position: relative;
+        float: right;
+        text-align: center;
+        width: 30%;
+
+        p{
+          position: relative;
+          margin: 0px auto;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          border: 1px solid @blu;
+          .border-radius(12px);
+          font-size: 20px;
+          line-height: 20px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+      .conferma, .annulla{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: 0px auto;
+        padding: 4px 0px;
+      }
+    }
+  }
+}
+
+// ******************************
+// Style General form
+// ******************************

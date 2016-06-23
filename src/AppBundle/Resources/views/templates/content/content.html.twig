@@ -1,0 +1,169 @@
+{% set _prefaceFirst     = block('prefaceFirst') %}
+{% set _prefaceSecond    = block('prefaceSecond') %}
+{% set _prefaceThird     = block('prefaceThird') %}
+{% set _sidebarFirst     = block('sidebarFirst') %}
+{% set _content          = block('content') %}
+{% set _sidebarSecond    = block('sidebarSecond') %}
+{% set _postscriptFirst  = block('postscriptFirst') %}
+{% set _postscriptSecond = block('postscriptSecond') %}
+{% set _postscriptThird  = block('postscriptThird') %}
+{% set _postscriptFourth = block('postscriptFourth') %}
+{% set _visualWelcome    = block('visualWelcome') %}
+
+
+{% set _all = _prefaceFirst|raw ~ _prefaceSecond|raw ~ _prefaceThird|raw ~ _sidebarFirst|raw ~ _content|raw ~ _sidebarSecond|raw ~ _postscriptFirst|raw ~ _postscriptSecond|raw ~ _postscriptThird|raw ~ _postscriptFourth|raw ~ _visualWelcome|raw %}
+
+{% if _all is not empty %}
+    {% set classPrefaceFirst     = classPrefaceFirst     is defined ? classPrefaceFirst     : 'grid-16' %}
+    {% set classPrefaceSecond    = classPrefaceSecond    is defined ? classPrefaceSecond    : 'grid-16' %}
+    {% set classPrefaceThird     = classPrefaceThird     is defined ? classPrefaceThird     : 'grid-16' %}
+    {% set classSidebarFirst     = classSidebarFirst     is defined ? classSidebarFirst     : 'grid-4' %}
+    {% set classContent          = classContent          is defined ? classContent          : 'grid-16' %}
+    {% set classSidebarSecond    = classSidebarSecond    is defined ? classSidebarSecond    : 'grid-3' %}
+    {% set classPostscriptFirst  = classPostscriptFirst  is defined ? classPostscriptFirst  : 'grid-3' %}
+    {% set classPostscriptSecond = classPostscriptSecond is defined ? classPostscriptSecond : 'grid-3' %}
+    {% set classPostscriptThird  = classPostscriptThird  is defined ? classPostscriptThird  : 'grid-3' %}
+    {% set classPostscriptFourth = classPostscriptFourth is defined ? classPostscriptFourth : 'grid-3' %}
+
+    <section id="section-content" class="section section-content">
+
+        {% if _visualWelcome is not empty %}
+            {{ _visualWelcome|raw }}
+        {% endif %}
+
+        {% if _prefaceFirst or _prefaceSecond or _prefaceThird is not empty %}
+            <div id="zone-preface-wrapper" class="zone-wrapper zone-preface-wrapper clearfix">
+                <div id="zone-preface" class="zone zone-preface clearfix {{ siteStyle }}">
+
+                    {% if _prefaceFirst is not empty %}
+                        <div id="region-preface-first" class="{{ classPrefaceFirst }} region region-preface-first">
+                            <div class="region-inner region-preface-first-inner">
+
+                                {{ _prefaceFirst|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _prefaceSecond is not empty %}
+                        <div id="region-preface-second" class="{{ classPrefaceSecond }} region region-preface-second">
+                            <div class="region-inner region-preface-second-inner">
+
+                                {{ _prefaceSecond|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _prefaceThird is not empty %}
+                        <div id="region-preface-third" class="{{ classPrefaceThird }} region region-preface-third">
+                            <div class="region-inner region-preface-third-inner">
+
+                                {{ _prefaceThird|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if _sidebarFirst or _content or _sidebarSecond is not empty %}
+            <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix">
+                <div id="zone-content" class="zone zone-content clearfix {{ siteStyle }}">
+
+                    {% block tplFlashMessages %}
+                        {% include '@App/templates/content/flash-message.html.twig' %}
+                    {% endblock %}
+
+                    {% if _sidebarFirst is not empty %}
+                        <aside id="region-sidebar-first" class="{{ classSidebarFirst }} region region-sidebar-first">
+                            <div class="region-inner region-sidebar-first-inner">
+
+                                {{ _sidebarFirst|raw }}
+
+                            </div>
+                        </aside>
+                    {% endif %}
+
+                    {% if _content is not empty %}
+                        <div id="region-content" class="{{ classContent }} region region-content">
+                            <div class="region-inner region-content-inner ">
+
+                                <div class="wrap-page ">
+                                    <div class="wrap-content row">
+
+                                        {{ _content|raw }}
+
+                                    </div><!-- /.main-content -->
+                                </div><!-- /.wrap-page -->
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _sidebarSecond is not empty %}
+                        <aside id="region-sidebar-second" class="{{ classSidebarSecond }} region region-sidebar-second">
+                            <div class="region-inner region-sidebar-second-inner">
+
+                                {{ _sidebarSecond|raw }}
+
+                            </div>
+                        </aside>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if _postscriptFirst or _postscriptSecond or _postscriptThird or _postscriptFourth is not empty %}
+            <div id="zone-postscript-wrapper" class="zone-wrapper zone-postscript-wrapper clearfix">
+                <div id="zone-postscript" class="zone zone-postscript clearfix {{ layout }}">
+
+                    {% if _postscriptFirst is not empty %}
+                        <div id="region-postscript-first" class="{{ classPostscriptFirst }} region region-postscript-first">
+                            <div class="region-inner region-postscript-first-inner">
+
+                                {{ _postscriptFirst|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _postscriptSecond is not empty %}
+                        <div id="region-postscript-second" class="{{ classPostscriptSecond }} region region-postscript-second">
+                            <div class="region-inner region-postscript-second-inner">
+
+                                {{ _postscriptSecond|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _postscriptThird is not empty %}
+                        <div id="region-postscript-third" class="{{ classPostscriptThird }} region region-postscript-third">
+                            <div class="region-inner region-postscript-third-inner">
+
+                                {{ _postscriptThird|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if _postscriptFourth is not empty %}
+                        <div id="region-postscript-fourth" class="{{ classPostscriptFourth }} region region-postscript-fourth">
+                            <div class="region-inner region-postscript-fourth-inner">
+
+                                {{ _postscriptFourth|raw }}
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+
+    </section>
+{% endif %}

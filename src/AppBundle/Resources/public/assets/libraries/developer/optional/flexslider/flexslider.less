@@ -1,0 +1,73 @@
+.flexslider{
+  background: none !important;
+  margin: 0px;
+  border: none !important;
+  .border-radius(0px) !important;
+  -webkit-box-shadow: none !important; // iOS <4.3 & Android <4.1
+  -moz-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important;
+
+  .flex-viewport{
+
+    .da-non-perdere& {
+      margin-left: -10px !important;
+      margin-right: -10px !important;
+    }
+
+    ul.slides{
+
+      li{
+
+        .clip {
+          
+        }
+        
+        .da-non-perdere& {
+          
+          @media @max-sm {
+            width: 310px !important;
+          }
+          @media @min-sm {
+            width: 360px !important;
+          }
+          @media @min-md {
+            width: 240px !important;
+          }
+          @media @min-lg {
+            width: 300px !important;
+          }
+        }
+      }
+    }
+  }
+  .flex-direction-nav{
+	  
+    li{
+		
+		&.flex-nav-prev{
+			a{
+				height: 80px;
+				background-image: url('@{imgPath}Ellisse_sx.png');
+				background-repeat: no-repeat;
+				background-position:50% 50%;
+				&:hover{
+		
+				}
+			  }
+		}
+		&.flex-nav-next{
+			a{
+				height: 80px;
+				background-image: url('@{imgPath}Ellisse_dx.png');
+				background-repeat: no-repeat;
+				background-position:50% 50%;
+				&:hover{
+		
+				}
+			 }		
+		}
+    }
+  }
+}
